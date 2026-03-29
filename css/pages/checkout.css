@@ -1,0 +1,256 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+}
+
+body {
+    font-family: "Plus Jakarta Sans", sans-serif;
+    padding-top: 80px;
+}
+
+.checkout-header {
+    padding: 20px 70px;
+    background-color: aliceblue;
+    z-index: 100;
+}
+
+.logo-img {
+    height: 30px;
+}
+
+.checkout-title {
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: #002c3e;
+}
+
+.items-count {
+    color: #f7444e;
+}
+
+.lock-icon {
+    color: #002c3e;
+    font-size: 1.4rem;
+}
+
+.checkout-main-container {
+    padding: 50px 40px;
+    font-size: 1rem;
+    color: #002c3e;
+}
+
+.page-title {
+    font-weight: 700;
+    font-size: 1.2rem;
+}
+
+.order-card {
+    padding: 20px;
+    border: 1px solid rgb(222, 222, 222);
+    border-radius: 4px;
+}
+
+.delivery-status {
+    color: #f7444e;
+    font-weight: 800;
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+}
+
+.order-content {
+    margin-top: 20px;
+}
+
+.product-image {
+    height: 128px;
+    width: auto;
+    object-fit: contain;
+}
+
+.product-details {
+    align-items: start;
+}
+
+.product-name {
+    font-weight: 700;
+}
+
+.product-price {
+    color: rgb(136, 2, 2);
+    font-weight: 700;
+}
+
+.quantity-controls {
+    display: flex;
+    gap: 8px;
+    font-size: 0.9rem;
+    flex-wrap: wrap;
+}
+
+.quantity-value {
+    font-weight: 600;
+}
+
+.action-link {
+    cursor: pointer;
+    transition: 0.3s ease;
+    color: #002c3e;
+}
+
+.action-link:hover {
+    color: #f7444e;
+}
+
+.delivery-options-section {
+    padding-left: 10px;
+}
+
+.delivery-options-title {
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.delivery-option {
+    margin-bottom: 12px;
+    cursor: pointer;
+}
+
+.delivery-option .form-check-input {
+    cursor: pointer;
+}
+
+.delivery-date {
+    color: rgb(0, 118, 0);
+    font-weight: 500;
+    margin-bottom: 3px;
+}
+
+.delivery-price {
+    color: rgb(120, 120, 120);
+    font-size: 15px;
+}
+
+.payment-summary-card {
+    padding: 20px;
+    border: 1px solid rgb(222, 222, 222);
+    border-radius: 4px;
+    position: sticky;
+    top: 100px;
+}
+
+.summary-title {
+    font-weight: 700;
+    font-size: 18px;
+    margin-bottom: 12px;
+}
+
+.summary-row {
+    display: flex;
+    justify-content: space-between;
+    font-size: 15px;
+    margin-bottom: 9px;
+}
+
+.summary-amount {
+    text-align: right;
+}
+
+.subtotal-row {
+    padding-top: 9px;
+}
+
+.subtotal-row .summary-amount {
+    border-top: 1px solid rgb(222, 222, 222);
+    padding-top: 9px;
+}
+
+.total-row {
+    color: rgb(177, 39, 4);
+    font-weight: 700;
+    font-size: 18px;
+    border-top: 1px solid rgb(222, 222, 222);
+    padding-top: 18px;
+}
+
+.btn-place-order {
+    padding: 12px;
+    border-radius: 8px;
+    margin-top: 11px;
+    margin-bottom: 15px;
+    background-color: #f7444e;
+    border: none;
+    color: white;
+    transition: 0.3s ease;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+.btn-place-order:hover {
+    background-color: transparent;
+    color: #f7444e;
+    border: 1px solid #f7444e;
+}
+
+.btn-place-order:active {
+    opacity: 0.3;
+}
+
+.page-transition {
+    position: fixed;
+    inset: 0;
+    background: white;
+    z-index: 9999;
+    pointer-events: none;
+    opacity: 0;
+    animation: fadeOut 0.9s forwards;
+}
+
+@keyframes fadeOut {
+    from { opacity: 1; }
+    to { opacity: 0; }
+}
+
+@media (max-width: 991px) {
+    .checkout-header {
+        padding: 15px 30px;
+    }
+    
+    .checkout-main-container {
+        padding: 40px 20px;
+    }
+    
+    .payment-summary-card {
+        position: static;
+        margin-bottom: 20px;
+    }
+    
+    .product-details {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    
+    .product-image {
+        margin-bottom: 10px;
+    }
+}
+
+@media (max-width: 768px) {
+    .checkout-header .row {
+        flex-direction: column;
+        gap: 10px;
+        text-align: center;
+    }
+    
+    .checkout-title {
+        font-size: 1.2rem;
+    }
+    
+    .order-card {
+        padding: 15px;
+    }
+    
+    .delivery-status {
+        font-size: 1rem;
+    }
+}

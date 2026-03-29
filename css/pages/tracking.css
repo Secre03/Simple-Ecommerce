@@ -1,0 +1,134 @@
+
+.tracking-main-section {
+    padding-top: 210px;
+    padding-bottom: 100px;
+    max-width: 850px;
+    margin: 0 auto;
+    color: #002c3e;
+}
+
+.tracking-content {
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
+.back-link {
+    display: inline-block;
+    margin-bottom: 30px;
+    font-size: 1.4rem;
+    color: #0066cc;
+    text-decoration: none;
+    transition: 0.3s ease;
+}
+
+.back-link:hover {
+    color: #004499;
+    text-decoration: underline;
+}
+
+.delivery-date-heading {
+    font-size: 25px;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.product-detail-info {
+    margin-bottom: 3px;
+    font-size: 1rem;
+}
+
+.product-tracking-image {
+    max-width: 150px;
+    max-height: 150px;
+    object-fit: contain;
+    margin-top: 25px;
+    margin-bottom: 50px;
+}
+
+.progress-status-container {
+    display: flex;
+    justify-content: space-between;
+    font-size: 20px;
+    font-weight: 500;
+    margin-bottom: 15px;
+}
+
+.status-label {
+    color: #002c3e;
+}
+
+.status-current {
+    color: rgb(6, 125, 98);
+}
+.progress-bar-fill {
+  transition: width 0.5s ease-in-out;
+}
+
+.status-label {
+  opacity: 0.5;
+}
+
+.status-label.status-current {
+  opacity: 1;
+  font-weight: bold;
+  color: #28a745;
+}
+.progress-bar-wrapper {
+    height: 25px;
+    width: 100%;
+    border: 1px solid rgb(200, 200, 200);
+    border-radius: 50px;
+    overflow: hidden;
+    background-color: #ffffff;
+}
+
+.progress-bar-fill {
+    height: 100%;
+    background-color: green;
+    border-radius: 50px;
+    width: 50%;
+    transition: width 0.3s ease;
+}
+
+@media (max-width: 991px) {
+    .tracking-main-section {
+        padding-top: 250px;
+    }
+}
+
+@media (max-width: 768px) {
+    .tracking-content {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+    
+    .back-link {
+        font-size: 1.2rem;
+    }
+    
+    .delivery-date-heading {
+        font-size: 22px;
+    }
+}
+
+@media (max-width: 575px) {
+    .progress-status-container {
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 450px) {
+    .progress-status-container {
+        flex-direction: column;
+        margin-bottom: 5px;
+        gap: 3px;
+    }
+    
+    .delivery-date-heading {
+        font-size: 20px;
+    }
+    
+    .back-link {
+        font-size: 1.1rem;
+    }
+}

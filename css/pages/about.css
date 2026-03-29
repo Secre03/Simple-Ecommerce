@@ -1,0 +1,30 @@
+.about-banner {
+    top: 95px;
+    left: 0;
+    right: 0;
+    background-color: #f7444e;
+    padding: 40px;
+    z-index: 50;
+}
+
+.about-section {
+    padding: 230px 70px 130px;
+    position: relative;
+}
+
+@media (max-width: 991px) {
+    .about-section {
+        padding: 200px 30px 80px;
+    }
+}
+
+@media (max-width: 768px) {
+    .about-section {
+        padding: 180px 20px 60px;
+    }
+    
+    .service-card {
+        height: 250px;
+    }
+}
+
