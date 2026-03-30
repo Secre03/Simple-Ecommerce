@@ -13,18 +13,48 @@
 }
 
 @media (max-width: 991px) {
+    .about-banner {
+        padding: 30px 20px;
+    }
+
     .about-section {
-        padding: 200px 30px 80px;
+        padding: 210px 30px 80px;
     }
 }
 
 @media (max-width: 768px) {
-    .about-section {
-        padding: 180px 20px 60px;
+    .about-banner {
+        padding: 24px 16px;
     }
-    
+
+    .about-banner h1 {
+        font-size: 2rem;
+    }
+
+    .about-section {
+        padding: 195px 20px 60px;
+    }
+
     .service-card {
         height: 250px;
     }
 }
 
+@media (max-width: 480px) {
+    .about-banner {
+        padding: 20px 12px;
+    }
+
+    .about-banner h1 {
+        font-size: 1.6rem;
+    }
+
+    .about-section {
+        padding: 185px 12px 50px;
+    }
+
+    .service-card {
+        height: auto;
+        min-height: 200px;
+    }
+}

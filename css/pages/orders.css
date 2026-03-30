@@ -1,5 +1,5 @@
 .orders-main-section {
-    padding-top: 190px;
+    padding-top: 190px; 
     padding-bottom: 100px;
     max-width: 850px;
     margin: 0 auto;
@@ -31,11 +31,14 @@
     align-items: center;
     justify-content: space-between;
     padding: 20px 25px;
+    flex-wrap: wrap;
+    gap: 10px;
 }
 
 .order-header-left {
     display: flex;
     gap: 45px;
+    flex-wrap: wrap;
 }
 
 .order-info-item {
@@ -50,6 +53,9 @@
 .order-header-right {
     display: flex;
     gap: 5px;
+    min-width: 0;
+    overflow-wrap: anywhere;
+    word-break: break-all;
 }
 
 .order-details-section {
@@ -110,7 +116,6 @@
     height: auto;
 }
 
-
 .product-actions-section {
     display: flex;
     align-items: flex-start;
@@ -139,13 +144,22 @@
 
 @media (max-width: 991px) {
     .orders-main-section {
-        padding-top: 250px;
+        padding-top: 260px; 
         padding-left: 20px;
         padding-right: 20px;
+    }
+
+    .page-title-orders {
+        font-size: 22px;
     }
 }
 
 @media (max-width: 768px) {
+    .orders-main-section {
+        padding-top: 300px;
+        padding-bottom: 60px;
+    }
+
     .order-header-section {
         flex-direction: column;
         align-items: flex-start;
@@ -167,6 +181,7 @@
     .order-header-right {
         display: grid;
         grid-template-columns: auto 1fr;
+        width: 100%;
     }
 
     .btn-buy-again {
@@ -176,9 +191,18 @@
     .btn-track-package {
         width: 140px;
     }
-}
 
+    .orders-container-grid {
+        gap: 30px;
+    }
+}
 @media (max-width: 575px) {
+    .orders-main-section {
+        padding-top: 330px;
+        padding-left: 12px;
+        padding-right: 12px;
+    }
+
     .order-details-section {
         padding: 25px 15px;
     }
@@ -212,5 +236,27 @@
     .btn-track-package {
         width: 100%;
         padding: 12px;
+    }
+
+    .page-title-orders {
+        font-size: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .order-header-section {
+        padding: 12px;
+    }
+
+    .order-label {
+        font-size: 14px;
+    }
+
+    .order-header-right {
+        font-size: 13px;
+    }
+
+    .orders-container-grid {
+        gap: 20px;
     }
 }

@@ -21,6 +21,9 @@ header .navbar {
 
 .logo-img {
     height: 45px;
+    width: auto;
+    max-height: 45px;
+    object-fit: contain;
 }
 
 .navbar-nav .nav-link {
@@ -34,6 +37,11 @@ header .navbar {
     color: #f7444e !important;
 }
 
+.navbar-nav .nav-link.active {
+    color: #f7444e !important;
+}
+
+/* ─── Hero ─── */
 .hero-section {
     padding: 100px 0;
     overflow: hidden;
@@ -98,6 +106,7 @@ header .navbar {
     opacity: 0.2;
 }
 
+/* ─── Why Us ─── */
 .why-us-section {
     padding: 130px 70px;
 }
@@ -135,6 +144,7 @@ header .navbar {
     font-weight: 600;
 }
 
+/* ─── New Arrivals ─── */
 .new-arrivals-section {
     position: relative;
     min-height: 80vh;
@@ -158,6 +168,7 @@ header .navbar {
     font-family: 'Playfair Display', serif;
 }
 
+/* ─── Products ─── */
 .products-section {
     margin-top: 60px;
     padding: 60px 0;
@@ -199,6 +210,7 @@ header .navbar {
     color: #002c3e;
 }
 
+/* ─── Subscription ─── */
 .subscription-section {
     background-color: rgb(203, 203, 206);
     padding: 60px;
@@ -252,6 +264,7 @@ header .navbar {
     opacity: 0.2;
 }
 
+/* ─── Footer ─── */
 .footer-section {
     background-color: #002c3e;
     font-family: 'Playfair Display', serif;
@@ -299,6 +312,7 @@ header .navbar {
     font-family: "Plus Jakarta Sans", sans-serif;
 }
 
+/* ─── Page Transition ─── */
 .page-transition {
     position: fixed;
     inset: 0;
@@ -314,102 +328,333 @@ header .navbar {
     to   { opacity: 0; }
 }
 
+/* ════════════════════════════════════════
+   RESPONSIVE
+════════════════════════════════════════ */
+
+/* ─── Tablet (≤991px) ─── */
 @media (max-width: 991px) {
+
+    /* Navbar padding */
     header .navbar {
-        padding: 0 30px;
+        padding: 0 20px;
     }
-    
+
+    /* Hamburger button */
+    .navbar-toggler {
+        border: none;
+        padding: 6px 10px;
+    }
+
+    .navbar-toggler:focus {
+        box-shadow: none;
+        outline: none;
+    }
+
+    /* Drawer: slide in from right, sits below header */
+    .navbar-collapse {
+        display: block !important;
+        position: fixed;
+        top: 95px;
+        right: 0;
+        width: 260px;
+        height: calc(100vh - 95px);
+        background-color: aliceblue;
+        padding: 10px 0;
+        box-shadow: -3px 0 14px rgba(0, 0, 0, 0.12);
+        z-index: 1050;
+        overflow-y: auto;
+        transform: translateX(100%);
+        transition: transform 0.3s ease-in-out;
+        /* prevent Bootstrap collapse from fighting our transform */
+        visibility: visible !important;
+        opacity: 1 !important;
+    }
+
+    .navbar-collapse.show {
+        transform: translateX(0);
+    }
+
+    /* Nav list: full-width vertical stack, no horizontal gap */
+    .navbar-nav {
+        flex-direction: column !important;
+        align-items: flex-start !important;
+        gap: 0 !important;
+        width: 100%;
+        padding: 0 16px;
+    }
+
+    .navbar-nav .nav-item {
+        width: 100%;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+    }
+
+    .navbar-nav .nav-item:first-child {
+        border-top: 1px solid rgba(0, 0, 0, 0.08);
+    }
+
+    .navbar-nav .nav-link {
+        display: block;
+        width: 100%;
+        padding: 14px 8px !important;
+        font-size: 1rem;
+        white-space: nowrap;
+    }
+
+    /* Dim overlay when drawer is open */
+    body.nav-open::after {
+        content: '';
+        position: fixed;
+        inset: 0;
+        background: rgba(0, 0, 0, 0.35);
+        z-index: 1040;
+    }
+
+    /* ── Other sections ── */
     .why-us-section {
         padding: 80px 30px;
     }
-    
+
     .hero-content {
         padding-left: 30px;
         padding-right: 30px;
     }
-    
+
     .arrivals-content {
         padding-left: 30px;
         padding-right: 30px;
     }
-    
+
     .sale-section {
         font-size: 3.5rem;
     }
-    
+
     .arrivals-title {
         font-size: 2.5rem;
     }
-    
+
     .section-title {
         font-size: 2.8rem;
     }
-    
+
     .subscription-title {
         font-size: 2.2rem;
     }
-    /* hamburger nav */
-    .navbar-collapse {
-        position: fixed;
-        top: 95px;
-        right: 0;
-        width: 300px;
-        height: calc(100vh - 95px);
-        background-color: aliceblue;
-        padding: 30px 20px;
-        box-shadow: -2px 0 10px rgba(0, 0, 0, 0.1);
-        z-index: 1000;
-        transform: translateX(100%);
-        transition: transform 0.3s ease-in-out;
+
+    .subscription-section {
+        padding: 50px 30px;
     }
-    
-    .navbar-collapse.show {
-        transform: translateX(0);
+
+    .service-card {
+        height: 270px;
     }
-    
-    .navbar-nav {
-        flex-direction: column;
-        gap: 0 !important;
+
+    .footer-title {
+        font-size: 1.7rem;
     }
-    
-    .navbar-nav .nav-item {
-        width: 100%;
-        border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-    }
-    
-    .navbar-nav .nav-link {
-        padding: 15px 10px !important;
-        display: block;
+
+    .social-icons {
+        font-size: 34px;
     }
 }
 
+/* ─── Large Phone (≤768px) ─── */
 @media (max-width: 768px) {
+    header .navbar {
+        padding: 0 16px;
+    }
+
+    .logo-img {
+        height: 32px;
+        max-height: 32px;
+    }
+
     .sale-section {
         font-size: 2.8rem;
     }
-    
+
     .arrivals-title {
         font-size: 2rem;
     }
-    
+
     .section-title {
         font-size: 2.2rem;
     }
-    
+
     .subscription-title {
         font-size: 1.8rem;
     }
-    
+
+    .subscription-section {
+        padding: 40px 20px;
+        margin-top: 60px;
+    }
+
     .contents {
         font-size: 16px;
     }
-    
+
     .email-input {
         width: 100%;
     }
-    
+
     .hero-content {
         padding-left: 20px;
         padding-right: 20px;
+    }
+
+    .hero-section {
+        padding: 60px 0;
+    }
+
+    .arrivals-content {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    .service-card {
+        height: 250px;
+    }
+
+    .product-img-container {
+        height: 180px;
+    }
+
+    .products-section {
+        margin-top: 30px;
+        padding: 40px 0;
+    }
+
+    .subscribe-btn {
+        padding: 12px 50px;
+    }
+
+    .footer-title {
+        font-size: 1.5rem;
+    }
+
+    .footer-list li {
+        line-height: 2.5;
+    }
+
+    .social-icons {
+        font-size: 30px;
+    }
+}
+
+/* ─── Small Phone (≤480px) ─── */
+@media (max-width: 480px) {
+    header .navbar {
+        padding: 0 12px;
+    }
+
+    .logo-img {
+        height: 26px;
+        max-height: 26px;
+    }
+
+    /* Full-width drawer on very small screens */
+    .navbar-collapse {
+        width: 100%;
+    }
+
+    .sale-section {
+        font-size: 2.2rem;
+    }
+
+    .arrivals-title {
+        font-size: 1.7rem;
+    }
+
+    .section-title {
+        font-size: 1.8rem;
+    }
+
+    .subscription-title {
+        font-size: 1.5rem;
+    }
+
+    .subscription-section {
+        padding: 30px 16px;
+        margin-top: 40px;
+    }
+
+    .subscription-section p {
+        font-size: 0.95rem;
+    }
+
+    .hero-content {
+        padding-left: 16px;
+        padding-right: 16px;
+    }
+
+    .hero-section {
+        padding: 40px 0;
+    }
+
+    .arrivals-content {
+        padding-left: 16px;
+        padding-right: 16px;
+    }
+
+    .btn-custom {
+        padding: 10px 32px;
+        font-size: 14px;
+    }
+
+    .why-us-section {
+        padding: 50px 16px;
+    }
+
+    .service-card {
+        height: auto;
+        min-height: 200px;
+        padding: 24px 16px !important;
+    }
+
+    .service-card img {
+        height: 48px;
+    }
+
+    .card-title {
+        font-size: 17px;
+    }
+
+    .product-img-container {
+        height: 160px;
+    }
+
+    .product-info {
+        font-size: 14px;
+    }
+
+    .subscribe-btn {
+        padding: 10px 36px;
+        font-size: 0.9rem;
+        width: 100%;
+    }
+
+    .email-input {
+        padding: 16px 20px;
+    }
+
+    .footer-title {
+        font-size: 1.3rem;
+    }
+
+    .footer-list li {
+        line-height: 2.2;
+    }
+
+    .footer-list a {
+        font-size: 14px;
+    }
+
+    .social-icons {
+        font-size: 26px;
+    }
+
+    .social-icons a {
+        margin: 0 6px;
     }
 }

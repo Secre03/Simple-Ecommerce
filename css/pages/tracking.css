@@ -1,6 +1,5 @@
-
 .tracking-main-section {
-    padding-top: 210px;
+    padding-top: 210px; 
     padding-bottom: 100px;
     max-width: 850px;
     margin: 0 auto;
@@ -43,6 +42,7 @@
     object-fit: contain;
     margin-top: 25px;
     margin-bottom: 50px;
+    display: block;
 }
 
 .progress-status-container {
@@ -55,24 +55,15 @@
 
 .status-label {
     color: #002c3e;
+    opacity: 0.5;
 }
 
 .status-current {
-    color: rgb(6, 125, 98);
-}
-.progress-bar-fill {
-  transition: width 0.5s ease-in-out;
-}
-
-.status-label {
-  opacity: 0.5;
+    opacity: 1;
+    font-weight: bold;
+    color: #28a745;
 }
 
-.status-label.status-current {
-  opacity: 1;
-  font-weight: bold;
-  color: #28a745;
-}
 .progress-bar-wrapper {
     height: 25px;
     width: 100%;
@@ -87,48 +78,84 @@
     background-color: green;
     border-radius: 50px;
     width: 50%;
-    transition: width 0.3s ease;
+    transition: width 0.5s ease-in-out;
 }
 
 @media (max-width: 991px) {
     .tracking-main-section {
-        padding-top: 250px;
+        padding-top: 260px; 
+        padding-left: 20px;
+        padding-right: 20px;
     }
 }
 
 @media (max-width: 768px) {
-    .tracking-content {
-        padding-left: 20px;
-        padding-right: 20px;
+    .tracking-main-section {
+        padding-top: 300px;
+        padding-bottom: 60px;
     }
-    
+
+    .tracking-content {
+        padding-left: 16px;
+        padding-right: 16px;
+    }
+
     .back-link {
         font-size: 1.2rem;
+        margin-bottom: 20px;
     }
-    
+
     .delivery-date-heading {
         font-size: 22px;
+    }
+
+    .product-tracking-image {
+        margin-bottom: 35px;
     }
 }
 
 @media (max-width: 575px) {
+    .tracking-main-section {
+        padding-top: 330px;
+        padding-left: 12px;
+        padding-right: 12px;
+    }
+
+    .tracking-content {
+        padding-left: 12px;
+        padding-right: 12px;
+    }
+
     .progress-status-container {
         font-size: 16px;
+    }
+
+    .progress-bar-wrapper {
+        height: 20px;
     }
 }
 
 @media (max-width: 450px) {
+    .tracking-main-section {
+        padding-top: 350px;
+    }
+
     .progress-status-container {
         flex-direction: column;
         margin-bottom: 5px;
         gap: 3px;
+        font-size: 15px;
     }
-    
+
     .delivery-date-heading {
         font-size: 20px;
     }
-    
+
     .back-link {
         font-size: 1.1rem;
+    }
+
+    .product-tracking-image {
+        margin-bottom: 25px;
     }
 }
